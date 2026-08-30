@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Vehicle Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+     <div class="header">
+    <h1>🚗 Smart Vehicle Monitoring System</h1>
+    <p>Vehicle Tracking & Monitoring Dashboard</p>
+</div>
+    <button onclick="logout()">🚪 Logout</button>
+    <button onclick="toggleMode()">🌙 Dark Mode</button>
+   <div class="dashboard">
+
+    <div class="stats">
+        <h3>Total Vehicles</h3>
+        <h1 id="totalVehicles">3</h1>
+    </div>
+
+    <div class="stats">
+        <h3>Vehicle Types</h3>
+        <h1>3</h1>
+    </div>
+
+    <div class="stats">
+        <h3>Search History</h3>
+        <h1 id="historyCount">0</h1>
+    </div>
+
+</div>
+  <div class="chartCard">
+    <h2>📊 Vehicle Distribution</h2>
+
+    <canvas id="vehicleChart"></canvas>
+</div>
+  <div class="searchBox"></div>
+    <h2>🔍 Search Vehicle</h2>
+    <h3>Filter by Vehicle Type</h3>
+
+<select id="filterType">
+    <option value="All">All</option>
+    <option value="Car">Car</option>
+    <option value="Bike">Bike</option>
+    <option value="Bus">Bus</option>
+</select>
+
+<button onclick="filterVehicles()">Filter</button>
+
+    <input type="text" id="vehicleInput" placeholder="Enter Vehicle Number">
+
+    <button onclick="searchVehicle()">Search</button>
+    </div>
+
+    <div class="card">
+
+      <h2>🚗 Vehicle Details</h2>
+<hr>
+        <h2>➕ Add New Vehicle</h2>
+
+<input type="text" id="newNumber" placeholder="Vehicle Number"><br><br>
+
+<input type="text" id="newOwner" placeholder="Owner Name"><br><br>
+
+<input type="text" id="newType" placeholder="Vehicle Type"><br><br>
+
+<input type="text" id="newSpeed" placeholder="Speed"><br><br>
+
+<input type="text" id="newFuel" placeholder="Fuel Level"><br><br>
+<div class="button-group">
+
+<div class="button-group">
+
+    <button onclick="addVehicle()">➕ Add</button>
+
+    <button onclick="updateVehicle()">✏ Update</button>
+
+    <button onclick="deleteVehicle()">🗑 Delete</button>
+
+    <button onclick="viewVehicles()">📋 View All</button>
+
+    <button onclick="downloadCSV()">⬇ Download CSV</button>
+
+</div>
+</div>
+
+<div id="vehicleList"></div>
+
+        <p><b>Vehicle Number:</b> <span id="number">TN 01 AB 1234</span></p>
+
+        <p><b>Owner Name:</b> <span id="owner">Praveena</span></p>
+
+        <p><b>Vehicle Type:</b> <span id="type">Car</span></p>
+
+        <p><b>Speed:</b> <span id="speed">80 km/h</span></p>
+
+        <p><b>Fuel Level:</b> <span id="fuel">75%</span></p>
+        <div class="fuelBar">
+    <div id="fuelFill"></div>
+</div>
+        <p><b>Status:</b> <span id="status">-</span></p>
+        <p><b>Last Search:</b> <span id="time">-</span></p>
+        <p><b>Location:</b> <a id="location" href="#" target="_blank">View on Map</a></p>
+
+    </div>
+    <p id="message"></p>
+    <h2>📜 Search History</h2>
+
+<ul id="history"></ul>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
